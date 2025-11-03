@@ -1,5 +1,6 @@
 # Прототип аналітики та звітності
-```plantuml@startuml
+
+```plantuml
 @startuml
 start
 
