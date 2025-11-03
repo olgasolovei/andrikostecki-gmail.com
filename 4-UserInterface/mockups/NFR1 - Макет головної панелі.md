@@ -1,0 +1,42 @@
+### NFR1 - Макет головної панелі (Продуктивність)
+
+```plantuml 
+@startuml
+skinparam titleBorderRoundCorner 15
+skinparam titleBorderThickness 2
+skinparam titleBorderColor #0066CC
+
+title NFR1 - Макет головної панелі (Продуктивність)
+
+package "Header" #E6F3FF {
+  rectangle "Система моніторингу закупівель" as title #0066CC
+  rectangle "Користувач: Иван Петренко" as user #6699CC
+  rectangle "Час відгуку: <2с" as performance #00CC66
+}
+
+package "Performance Dashboard" #F0F8FF {
+  frame "Швидкість системи" {
+    rectangle "Середній час відгуку: 1.8с" as response_time #E6F3FF
+    rectangle "Завантаження CPU: 45%" as cpu_usage #E6F3FF
+    rectangle "Використання пам'яті: 62%" as memory_usage #E6F3FF
+  }
+  
+  frame "Активність в реальному часі" {
+    rectangle "Активних сесій: 8/10" as active_sessions #E6F3FF
+    rectangle "Остання синхронізація: 10:30:15" as last_sync #E6F3FF
+    rectangle "Статус: OPTIMAL" as status #00CC66
+  }
+}
+
+package "Quick Actions" #F0F8FF {
+  rectangle "Пошук постачальників" as search_btn #0066CC
+  rectangle "Генерація звіту" as report_btn #0066CC
+  rectangle "Нова заявка" as request_btn #0066CC
+}
+
+response_time -[hidden]-> cpu_usage
+cpu_usage -[hidden]-> memory_usage
+active_sessions -[hidden]-> last_sync
+last_sync -[hidden]-> status
+
+@enduml
