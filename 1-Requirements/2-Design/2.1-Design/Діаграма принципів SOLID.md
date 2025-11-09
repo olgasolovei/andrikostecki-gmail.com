@@ -1,4 +1,4 @@
-## Діаграма принципів SOLID.md
+## Діаграма принципів SOLID
 
 ```plantuml
 @startuml
